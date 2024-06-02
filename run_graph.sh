@@ -13,9 +13,10 @@ fi
 
 # Further experiments log to graph
 for exp in SI I LI AC SC CC; do
-    if [ -f "$log_dir/VAE3_$exp/log.txt" ]; then
-        python3 /content/VAE_experiment/print_graph.py --log_path=$log_dir/VAE3_$exp/log.txt --out_path=$out_dir/VAE3_$exp.png
+    if [ -f "$log_dir/VAE3_${exp}_0/log.txt" ]; then
+        echo "Processing log file for VAE3_${exp}..."
+        python3 /content/VAE_experiment/print_graph.py --log_path=$log_dir/VAE3_${exp}_0/log.txt --out_path=$out_dir/VAE3_${exp}.png
     else
-        echo "Log file for VAE3_$exp not found"
+        echo "Log file for VAE3_${exp}_0 not found"
     fi
 done
